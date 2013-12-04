@@ -1,0 +1,10 @@
+body { background-color: white; margin: 0; padding: 0; color: #333; }
+body, div { font-family: 'lucida grande', helvetica, verdana, arial, sans-serif }
+div { padding: 10px; }
+
+#header, #footer { background: #F0F0F0; margin: auto; padding: 10px; color:#000000; }
+#header { text-align: center; }
+#footer { margin-bottom:0px; }
+#footer-right { text-align:right; }
+
+#content-main, content-projects, content-forum, content-contact { margin: auto; padding: 10px; width:80%; }
