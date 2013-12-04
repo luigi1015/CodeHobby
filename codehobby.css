@@ -1,4 +1,4 @@
-body { background-color: white; margin: 0; padding: 0; color: #333; }
+body { background-color: #F0F0F0; margin: 0; padding: 0; color: #333; }
 body, div { font-family: 'lucida grande', helvetica, verdana, arial, sans-serif }
 div { padding: 10px; }
 
@@ -8,3 +8,37 @@ div { padding: 10px; }
 #footer-right { text-align:right; }
 
 #content-main, content-projects, content-forum, content-contact { margin: auto; padding: 10px; width:80%; }
+
+/*
+.ui-tabs .ui-tabs-nav li { width: 20%; text-align: center; )
+
+.ui-tabs .ui-tabs-nav li a {
+    display: inline-block;
+    float: none;
+    padding: 5px;
+    text-decoration: none;
+    width: 100%;
+    margin: 0em;
+}
+*/
+
+.ui-tabs .ui-tabs-nav
+{/*Center the tabs*/
+    text-align: center;
+}
+
+.ui-tabs .ui-tabs-nav li
+{/*Set the width of the tabs and help center the tabs.*/
+    float: none !important;
+    display: inline-block;
+    width: 20%;
+}
+
+.ui-tabs .ui-tabs-nav a
+{/*Center the text in the tabs.*/
+    display: inline-block;
+    float: none;
+    padding: 5px;
+    text-decoration: none;
+    width: 100%;
+}
