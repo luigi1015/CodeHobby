@@ -11,8 +11,6 @@
 			$(function() {
 				$( "#tabs" ).tabs();
 			});
-			
-			$("li.forum a").unbind('click');
 		</script>
 		<link rel="stylesheet" media="screen" href="codehobby.css" />
 	</head>
@@ -28,10 +26,10 @@
 		<?php include 'projects.html'; ?>
 	</div>
 	<div id="content-forum">
-		<?php include 'http://codehobby.net/MyBB/'; ?>
+		<?php include 'forum.html'; ?>
 	</div>
 	<div id="content-contact">
-		<?php include 'projects.html'; ?>
+		<?php include 'contact.html'; ?>
 	</div>
 	</div><!--Main Section-->
 	<div id="footer">

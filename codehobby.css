@@ -8,7 +8,17 @@ div { padding: 10px; }
 #footer-right { text-align:right; }
 #main { background-color: #F0FAFF; }
 
-#content-main, #content-projects, #content-forum, #content-contact { margin: auto; padding: 10px; width:80%; }
+#content-main, #content-projects, #content-forum, #content-contact { margin: auto; padding: 1em; width:80%; }
+#content-main, #content-forum { height: 30em; margin-bottom:2em; }
+
+iframe
+{
+	border: 1px solid #000000;
+	width: 90%;
+	height: 25em;
+	display: block; /*Help the margin command center the iframe*/
+	margin: 0 auto; /* Center the iframe*/
+}
 
 /*
 .ui-tabs .ui-tabs-nav li { width: 20%; text-align: center; )
@@ -23,12 +33,14 @@ div { padding: 10px; }
 }
 */
 
-#tabs { 
+#tabs
+{ 
     background: transparent; 
     border: none; 
 }
  
-#tabs .ui-widget-header { 
+#tabs .ui-widget-header
+{ 
     background: transparent; 
     border: none; 
     /*border-bottom: 1px solid #000000; 
@@ -37,25 +49,30 @@ div { padding: 10px; }
     border-radius: 0px; */
 } 
  
-#tabs .ui-tabs-active { 
+#tabs .ui-tabs-active
+{ 
     border: none; 
 } 
 
-#tabs .ui-tabs-nav .ui-state-default { 
+#tabs .ui-tabs-nav .ui-state-default
+{ 
     background: transparent; 
     border: none; 
 } 
 
-#tabs .ui-tabs-nav .ui-state-active { 
+#tabs .ui-tabs-nav .ui-state-active
+{ 
     background: transparent; 
     border: none; 
 } 
 
-#tabs .ui-tabs-nav .ui-state-default a { 
+#tabs .ui-tabs-nav .ui-state-default a
+{ 
     color: #c0c0c0; 
 } 
 
-#tabs .ui-tabs-nav .ui-state-active a { 
+#tabs .ui-tabs-nav .ui-state-active a
+{ 
     color: #000000; 
 }
 
