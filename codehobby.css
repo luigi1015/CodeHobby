@@ -4,14 +4,14 @@ div { padding: 10px; }
 
 #header, #footer { background: #808080; margin: auto; padding: 10px; color:#000000; }
 #header { text-align: center; border-bottom: 1px solid #000000; }
-#footer { margin-bottom:0px; }
+#footer { margin-bottom:0px; text-align: center; }
 #footer-right { text-align:right; }
 #main { background-color: #F0FAFF; }
 
 #content-main, #content-projects, #content-forum, #content-contact { margin: auto; padding: 1em; width:80%; }
 #content-main, #content-forum { height: 30em; margin-bottom:2em; }
 
-iframe
+#forum
 {
 	border: 1px solid #000000;
 	width: 90%;
@@ -19,6 +19,8 @@ iframe
 	display: block; /*Help the margin command center the iframe*/
 	margin: 0 auto; /* Center the iframe*/
 }
+
+#facebook { padding: 0px; display: inline-block; vertical-align: top; }
 
 /*
 .ui-tabs .ui-tabs-nav li { width: 20%; text-align: center; )
@@ -102,4 +104,23 @@ iframe
 ul
 {/*Style the tab menu.*/
     background-color: #FFFFFF;
+}
+
+/*For Social Buttons*/
+.social
+{
+	font-size: 1px;
+	vertical-align: middle;
+}
+
+/*For Facebook Button*/
+.social iframe
+{
+	vertical-align: middle;
+}
+
+/*For Twitter Button*/
+.twitter span
+{
+	vertical-align: middle;
 }

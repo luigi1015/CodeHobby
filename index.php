@@ -15,6 +15,7 @@
 		<link rel="stylesheet" media="screen" href="codehobby.css" />
 	</head>
 	<body>
+
 	<!--<div id="header">-->
 		<?php include 'header.html'; ?>
 	<!--</div>-->
