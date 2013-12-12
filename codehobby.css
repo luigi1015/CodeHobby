@@ -1,16 +1,45 @@
-body { background-color: #FFFFFF; margin: 0; padding: 0; color: #333; }
+body { background-color: #808080; margin: 0; padding: 0; color: #333; }
 body, div { font-family: 'lucida grande', helvetica, verdana, arial, sans-serif }
 div { padding: 10px; }
 
 #header, #footer { background: #808080; margin: auto; padding: 10px; color:#000000; }
-#header { text-align: center; border-bottom: 1px solid #000000; }
-#footer { margin-bottom:0px; text-align: center; }
-#footer-right { text-align:right; }
-#main { background-color: #F0FAFF; }
+#header { text-align: center; /*border-bottom: 1px solid #000000;*/ }
+#footer { margin-bottom: 0px; text-align: center; }
+#footer-right { text-align: right; }
+#main { background-color: #F0FAFF;  border-top: 1px solid #000000; border-bottom: 1px solid #000000;}
 
-#content-main, #content-projects, #content-forum, #content-contact { margin: auto; padding: 1em; width:80%; }
-#content-main, #content-forum { height: 30em; margin-bottom:2em; }
+#content-main, #content-projects, #content-forum, #content-contact { margin: auto; width: 80%; }
+#content-main, #content-forum { height: 30em; margin-bottom: 2em; }
+#content-main, #content-projects { text-align: left; }
 
+form { display: inline-block; text-align: left;}
+
+#table-social
+{
+/*
+	position: absolute;
+	right: 0;
+	top: 0;
+*/
+	vertical-align: top;
+	width: 64px;
+}
+
+#table-main
+{
+	text-align: center;
+}
+
+table
+{
+	width: 100%;
+}
+/*
+td
+{
+	text-align: center;
+}
+*/
 #forum
 {
 	border: 1px solid #000000;
@@ -20,7 +49,7 @@ div { padding: 10px; }
 	margin: 0 auto; /* Center the iframe*/
 }
 
-#facebook { padding: 0px; display: inline-block; vertical-align: top; }
+/*#facebook { padding: 0px; display: inline-block; vertical-align: top; }*/
 
 /*
 .ui-tabs .ui-tabs-nav li { width: 20%; text-align: center; )
@@ -104,23 +133,4 @@ div { padding: 10px; }
 ul
 {/*Style the tab menu.*/
     background-color: #FFFFFF;
-}
-
-/*For Social Buttons*/
-.social
-{
-	font-size: 1px;
-	vertical-align: middle;
-}
-
-/*For Facebook Button*/
-.social iframe
-{
-	vertical-align: middle;
-}
-
-/*For Twitter Button*/
-.twitter span
-{
-	vertical-align: middle;
 }
