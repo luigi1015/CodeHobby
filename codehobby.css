@@ -1,8 +1,8 @@
-body { background-color: #000099; margin: 0; padding: 0; color: #333; }
+body { background-color: #5E5E5E; margin: 0; padding: 0; color: #333; }
 body, div { font-family: 'lucida grande', helvetica, verdana, arial, sans-serif }
 div { padding: 10px; }
 
-#header, #footer { background: #000099; margin: auto; padding: 10px; color:#000000; }
+#header, #footer { background: #5E5E5E; margin: auto; padding: 10px; color:#000000; }
 #header { text-align: center; /*border-bottom: 1px solid #000000;*/ }
 #footer { margin-bottom: 0px; text-align: center; }
 #footer-right { text-align: right; }
