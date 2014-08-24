@@ -5,6 +5,7 @@ div { padding: 10px; }
 #header, #footer { background: #5E5E5E; margin: auto; padding: 10px; color:#000000; }
 #header { text-align: center; /*border-bottom: 1px solid #000000;*/ }
 #footer { margin-bottom: 0px; text-align: center; }
+#footer-left { text-align: left; }
 #footer-right { text-align: right; }
 #main { background-color: #FFFFF8;  border-top: 1px solid #000000; border-bottom: 1px solid #000000;}
 
@@ -28,6 +29,11 @@ form { display: inline-block; text-align: left;}
 table
 {
 	width: 100%;
+}
+
+a
+{
+	color: #000000;
 }
 
 #forum
