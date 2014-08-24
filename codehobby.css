@@ -16,11 +16,6 @@ form { display: inline-block; text-align: left;}
 
 #table-social
 {
-/*
-	position: absolute;
-	right: 0;
-	top: 0;
-*/
 	vertical-align: top;
 	width: 64px;
 }
@@ -34,12 +29,7 @@ table
 {
 	width: 100%;
 }
-/*
-td
-{
-	text-align: center;
-}
-*/
+
 #forum
 {
 	border: 1px solid #000000;
@@ -48,21 +38,6 @@ td
 	display: block; /*Help the margin command center the iframe*/
 	margin: 0 auto; /* Center the iframe*/
 }
-
-/*#facebook { padding: 0px; display: inline-block; vertical-align: top; }*/
-
-/*
-.ui-tabs .ui-tabs-nav li { width: 20%; text-align: center; )
-
-.ui-tabs .ui-tabs-nav li a {
-    display: inline-block;
-    float: none;
-    padding: 5px;
-    text-decoration: none;
-    width: 100%;
-    margin: 0em;
-}
-*/
 
 #tabs
 { 
@@ -74,10 +49,6 @@ td
 { 
     background: transparent; 
     border: none; 
-    /*border-bottom: 1px solid #000000; 
-    -moz-border-radius: 0px; 
-    -webkit-border-radius: 0px; 
-    border-radius: 0px; */
 } 
  
 #tabs .ui-tabs-active
