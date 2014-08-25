@@ -8,8 +8,8 @@ body, div { font-family: 'lucida grande', helvetica, verdana, arial, sans-serif 
 #footer-right { text-align: right; }
 #main { background-color: #FFFFF8;  border-top: 1px solid #000000; border-bottom: 1px solid #000000;}
 
-#content-main, #content-projects, #content-forum, #content-contact { margin: auto; width: 80%; }
-#content-main, #content-forum, #content-contact { min-height: 35em; margin-bottom: 2em; }
+#content-main, #content-projects, #content-forum, #content-contact { margin: auto; width: 80%; min-height: 35em; }
+#content-main, #content-forum, #content-contact { margin-bottom: 2em; }
 #content-main, #content-projects { text-align: left; }
 
 form { display: inline-block; text-align: left;}
