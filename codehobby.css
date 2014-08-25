@@ -1,7 +1,7 @@
-body { background-color: #004BBA /*#5E5E5E*/; margin: 0; padding: 0; color: #333; }
+body { background-color: #3366CC /*#5E5E5E*/; margin: 0; padding: 0; }
 body, div { font-family: 'lucida grande', helvetica, verdana, arial, sans-serif }
 
-#header, #footer { background: #004BBA /*#5E5E5E*/; margin: auto; padding-left: 1em; padding-right: 1em; color: #001C45 /*#000000*/; }
+#header, #footer { margin: auto; padding-left: 1em; padding-right: 1em; color: #000000; }
 #header { text-align: center; /*border-bottom: 1px solid #000000;*/ }
 #footer { margin-bottom: 2em; text-align: center; }
 #footer-left { text-align: left; padding-left: 1em; }
