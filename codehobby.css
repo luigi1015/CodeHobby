@@ -1,27 +1,20 @@
-body { background-color: #3366CC /*#5E5E5E*/; margin: 0; padding: 0; }
-body, div { font-family: 'lucida grande', helvetica, verdana, arial, sans-serif }
-
-#header, #footer { margin: auto; padding-left: 1em; padding-right: 1em; color: #000000; }
-#header { text-align: center; /*border-bottom: 1px solid #000000;*/ }
-#footer { margin-bottom: 2em; text-align: center; }
-#footer-left { text-align: left; padding-left: 1em; }
-#footer-right { text-align: right; }
-#main { background-color: #FFFFF8;  border-top: 1px solid #000000; border-bottom: 1px solid #000000;}
-
-#content-main, #content-projects, #content-forum, #content-contact { margin: auto; width: 80%; min-height: 35em; }
-#content-main, #content-forum, #content-contact { margin-bottom: 2em; }
-#content-main, #content-projects { text-align: left; }
-
-form { display: inline-block; text-align: left;}
-
-#table-main
-{
-	text-align: center;
+/* -------------------------------------------------------- Whole Page -------------------------------------------------------- */
+*
+{//This is to fix some issues with unexpected padding and/or margins showing up.
+	margin: 0em;
+	padding: 0em;
 }
 
-.social-element
+body
 {
-	padding-right: 1em; 
+	background-color:  #FFFFF8; /*#3366CC;*/ /*#5E5E5E;*/
+	margin: 0em;
+	padding: 0em;
+}
+
+body, div
+{
+	font-family: 'lucida grande', helvetica, verdana, arial, sans-serif;
 }
 
 table
@@ -34,77 +27,94 @@ a
 	color: #000000;
 }
 
-#forum
-{
-	border: 1px solid #000000;
-	width: 90%;
-	height: 60em;
-	display: block; /*Help the margin command center the iframe*/
-	margin: 0 auto; /* Center the iframe*/
-}
-
-#tabs
-{ 
-    background: transparent; 
-    border: none; 
-}
- 
-#tabs .ui-widget-header
-{ 
-    background: transparent; 
-    border: none; 
-} 
- 
-#tabs .ui-tabs-active
-{ 
-    border: none; 
-} 
-
-#tabs .ui-tabs-nav .ui-state-default
-{ 
-    background: transparent; 
-    border: none; 
-} 
-
-#tabs .ui-tabs-nav .ui-state-active
-{ 
-    background: transparent; 
-    border: none; 
-} 
-
-#tabs .ui-tabs-nav .ui-state-default a
-{ 
-    color: #c0c0c0; 
-} 
-
-#tabs .ui-tabs-nav .ui-state-active a
-{ 
-    color: #000000; 
-}
-
-.ui-tabs .ui-tabs-nav
-{/*Center the tabs*/
-    text-align: center;
-}
-
-.ui-tabs .ui-tabs-nav li
-{/*Set the width of the tabs and help center the tabs.*/
-    /*float: none !important;*/
-    float: none;
-    display: inline-block;
-    width: 20%; 
-}
-
-.ui-tabs .ui-tabs-nav a
-{/*Center the text in the tabs.*/
-    display: inline-block;
-    float: none;
-    text-decoration: none;
-    width: 100%;
-    outline-color: transparent;
-}
-
 ul
-{/*Style the tab menu.*/
-    background-color: #FFFFFF;
+{
+	/*background-color: #FFFFFF;*/
+	background-color: transparent;
+}
+
+/* -------------------------------------------------------- Header -------------------------------------------------------- */
+#header, #footer
+{
+	background-color: #3366CC /*#5E5E5E*/;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1em;
+	padding-right: 1em;
+	color: #000000;
+}
+
+#header
+{
+	text-align: center;
+}
+
+/* -------------------------------------------------------- Header - Navigation Tabs -------------------------------------------------------- */
+
+
+/* -------------------------------------------------------- Main Content Section -------------------------------------------------------- */
+#main
+{
+	background-color: #FFFFF8;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	width: 100%;
+}
+
+#content-main, #content-projects, #content-contact
+{
+	background-color: #FFFFF8;
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+	width: 100%;
+
+	padding: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+
+	min-height: 35em;
+}
+
+#content-main, #content-contact
+{
+	padding-bottom: 2em;
+}
+
+#content-main, #content-projects
+{
+	text-align: left;
+}
+
+/* -------------------------------------------------------- Main Content - Main Section -------------------------------------------------------- */
+
+/* -------------------------------------------------------- Main Content - Projects Section -------------------------------------------------------- */
+
+/* -------------------------------------------------------- Main Content - Contact Section -------------------------------------------------------- */
+form
+{
+	display: inline-block;
+	text-align: left;
+}
+
+/* -------------------------------------------------------- Footer -------------------------------------------------------- */
+#footer
+{
+	padding-bottom: 2em;
+	text-align: center;
+}
+
+#footer-left
+{
+	text-align: left;
+	padding-left: 1em;
+}
+
+#footer-right
+{
+	text-align: right;
+}
+
+.social-element
+{
+	padding-right: 1em; 
 }

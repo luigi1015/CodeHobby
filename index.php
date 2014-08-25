@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<!-- <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> -->
@@ -9,32 +9,70 @@
 		<![endif]-->
 		<meta http-equiv="Content-Style-Type" content="text/css" />
 		<title>Code Hobby</title>
-		<link href="jquery-ui-1.10.3.custom-black-tie/css/custom-black-tie/jquery-ui-1.10.3.custom.css" rel="stylesheet">
+		<!-- <link href="jquery-ui-1.10.3.custom-black-tie/css/custom-black-tie/jquery-ui-1.10.3.custom.css" rel="stylesheet"> -->
 		<script src="jquery-ui-1.10.3.custom/js/jquery-1.9.1.js"></script>
 		<script src="jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
+<!--
 		<script>
 			$(function() {//This function is what enables the tab functionality from jQuery UI.
 				$( "#tabs" ).tabs();
 			});
 		</script>
+-->
+		<script>
+			$(document).ready( function() {
+				//Hide the projects and contact section by default.
+				//$( "#main" ).show();
+				$( "#content-main" ).show();
+				$( "#content-projects" ).hide();
+				$( "#content-contact" ).hide();
+
+				$( '#link-main' ).click( function() {
+					//$( "#main" ).show();
+					$( "#content-main" ).show();
+					$( "#content-projects" ).hide();
+					$( "#content-contact" ).hide();
+				});
+
+				$( '#link-projects' ).click( function() {
+					//$( "#main" ).show();
+					$( "#content-main" ).hide();
+					$( "#content-projects" ).show();
+					$( "#content-contact" ).hide();
+				});
+
+				$( '#link-contact' ).click( function() {
+					//$( "#main" ).show();
+					$( "#content-main" ).hide();
+					$( "#content-projects" ).hide();
+					$( "#content-contact" ).show();
+				});
+					
+				
+			});
+		</script>
 		<link rel="stylesheet" media="screen" href="codehobby.css" />
 	</head>
 	<body>
-		<div id="tabs"><!--Tabs div, this is what tells jquery ui this is the place it needs to set up the tabs.-->
+		<!--<div id="tabs">--><!--Tabs div, this is what tells jquery ui this is the place it needs to set up the tabs.-->
 			<header role="banner">
 				<div id="header">
 					<h1>Code Hobby</h1>
 					<nav role="navigation">
+							<a id="link-main" href="#content-main">Main</a>
+							<a id="link-projects" href="#content-projects">Projects</a>
+							<a id="link-contact" href="#content-contact">Contact</a>
+<!--
 						<ul>
 							<li><a href="#content-main">Main</a></li>
 							<li><a href="#content-projects">Projects</a></li>
-							<li><a href="#content-forum">Forum</a></li>
 							<li><a href="#content-contact">Contact</a></li>
 						</ul>
+-->
 					</nav>
 				</div>
 			</header>
-			<div id="main"><!--Main Section-->
+			<!--<div id="main">--><!--Main Section-->
 				<div id="content-main">
 					<article>
 						<h2>Code Hobby</h2>
@@ -117,13 +155,6 @@
 						A small program to generate the first few digits of Pi.</p>
 					</article>
 				</div>
-				<div id="content-forum">
-					<iframe id="forum" src="http://codehobby.net/MyBB/">
-					This is an iframe going to the forum. To get to the forum please go to <a href="http://codehobby.net/MyBB/" target="_blank">http://codehobby.net/MyBB/</a>
-					</iframe>
-					<br>
-					To get to the forum directly, please go to <a href="http://codehobby.net/MyBB/" target="_blank">http://codehobby.net/MyBB/</a>
-				</div>
 				<div id="content-contact">
 					<form action="mail.php" method="POST">
 						Fill this form out and press send to send me a note.
@@ -159,8 +190,8 @@
 						<input type="submit" value="Send"><input type="reset" value="Clear">
 					</form>
 				</div>
-			</div><!--Main Section-->
-		</div><!--Tabs div-->
+			<!--</div>--><!--Main Section-->
+		<!--</div>--><!--Tabs div-->
 
 		<div id="footer">
 			<br>
