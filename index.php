@@ -51,6 +51,7 @@
 				
 			});
 		</script>
+		<link rel="stylesheet" media="screen" href="reset.css" />
 		<link rel="stylesheet" media="screen" href="codehobby.css" />
 	</head>
 	<body>
