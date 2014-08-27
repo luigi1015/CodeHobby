@@ -24,28 +24,37 @@
 				//Hide the projects and contact section by default.
 				//$( "#main" ).show();
 				$( "#content-main" ).show();
+				$( "#content-main" ).addclass( "content-background" );
 				$( "#content-projects" ).hide();
+				$( "#content-projects" ).removeclass( "content-background" );
 				$( "#content-contact" ).hide();
+				$( "#content-contact" ).removeclass( "content-background" );
 
 				$( '#link-main' ).click( function() {
-					//$( "#main" ).show();
 					$( "#content-main" ).show();
+					$( "#content-main" ).addclass( "content-background" );
 					$( "#content-projects" ).hide();
+					$( "#content-projects" ).removeclass( "content-background" );
 					$( "#content-contact" ).hide();
+					$( "#content-contact" ).removeclass( "content-background" );
 				});
 
 				$( '#link-projects' ).click( function() {
-					//$( "#main" ).show();
 					$( "#content-main" ).hide();
+					$( "#content-main" ).removeclass( "content-background" );
 					$( "#content-projects" ).show();
+					$( "#content-projects" ).addclass( "content-background" );
 					$( "#content-contact" ).hide();
+					$( "#content-contact" ).removeclass( "content-background" );
 				});
 
 				$( '#link-contact' ).click( function() {
-					//$( "#main" ).show();
 					$( "#content-main" ).hide();
+					$( "#content-main" ).removeclass( "content-background" );
 					$( "#content-projects" ).hide();
+					$( "#content-projects" ).removeclass( "content-background" );
 					$( "#content-contact" ).show();
+					$( "#content-contact" ).addclass( "content-background" );
 				});
 					
 				
@@ -60,23 +69,25 @@
 				<div id="header">
 					<h1>Code Hobby</h1>
 					<nav role="navigation">
-							<a id="link-main" href="#content-main">Main</a>
-							<a id="link-projects" href="#content-projects">Projects</a>
-							<a id="link-contact" href="#content-contact">Contact</a>
-<!--
-						<ul>
-							<li><a href="#content-main">Main</a></li>
-							<li><a href="#content-projects">Projects</a></li>
-							<li><a href="#content-contact">Contact</a></li>
-						</ul>
--->
+						<table>
+							<tr>
+								<td>
+									<a id="link-main" href="#content-main">Main</a>
+								</td>
+								<td>
+									<a id="link-projects" href="#content-projects">Projects</a>
+								</td>
+								<td>
+									<a id="link-contact" href="#content-contact">Contact</a>
+								</td>
+							</tr>
+						</table>
 					</nav>
 				</div>
 			</header>
 			<!--<div id="main">--><!--Main Section-->
 				<div id="content-main">
 					<article>
-						<h2>Code Hobby</h2>
 						<p>Code Hobby is a project I started in 2013 to do some programming in my spare time. The projects have no real common theme except what I'm interested in working on at the time. They range from small proof of concept pojects to satisfy my curiosity to larger projects meant to be used. The code has been and will be open source whenever possible.</p>
 						<p>As I work on more programming projects, I'll link to them on this site. Feel free to use the code as allowed by the license.</p>
 						<p>Please feel free to take a look at some of the projects in the Projects section.</p>
