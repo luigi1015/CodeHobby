@@ -18,17 +18,21 @@
 		<script>
 			$(document).ready( function() {
 				showContent( "main" );
+				selectContent( "main" );
 
 				$( '#link-main' ).click( function() {
 					showContent( "main" );
+					selectContent( "main" );
 				});
 
 				$( '#link-projects' ).click( function() {
 					showContent( "projects" );
+					selectContent( "projects" );
 				});
 
 				$( '#link-contact' ).click( function() {
 					showContent( "contact" );
+					selectContent( "contact" );
 				});
 			});
 			
@@ -57,6 +61,34 @@
 					$( "#content-main" ).show();
 					$( "#content-projects" ).hide();
 					$( "#content-contact" ).hide();
+				}
+			}
+			
+			function selectContent( content )
+			{
+				if( content == "main" )
+				{
+					$( "#link-main" ).addClass( "header-selected" );
+					$( "#link-projects" ).removeClass( "header-selected" );
+					$( "#link-contact" ).removeClass( "header-selected" );
+				}
+				else if( content == "projects" )
+				{
+					$( "#link-projects" ).addClass( "header-selected" );
+					$( "#link-main" ).removeClass( "header-selected" );
+					$( "#link-contact" ).removeClass( "header-selected" );
+				}
+				else if( content == "contact" )
+				{
+					$( "#link-contact" ).addClass( "header-selected" );
+					$( "#link-main" ).removeClass( "header-selected" );
+					$( "#link-projects" ).removeClass( "header-selected" );
+				}
+				else
+				{
+					$( "#link-main" ).addClass( "header-selected" );
+					$( "#link-projects" ).removeClass( "header-selected" );
+					$( "#link-contact" ).removeClass( "header-selected" );
 				}
 			}
 		</script>

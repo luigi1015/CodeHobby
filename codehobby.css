@@ -64,11 +64,30 @@ p
 }
 
 /* -------------------------------------------------------- Header - Navigation Tabs -------------------------------------------------------- */
-#link-main, #link-projects
+header
 {
+	padding-bottom: 0.5em;
+	border-bottom: 1px solid #000000;
 }
-#link-contact
+
+#link-main, #link-projects, #link-contact
 {
+	padding: 0.5em;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+	border-top: 2px solid;
+	border-left: 2px solid;
+	border-right: 2px solid;
+}
+
+.header-selected
+{
+	background-color: #FFFFF8;
+}
+
+nav a
+{
+	text-decoration: none;
 }
 
 /* -------------------------------------------------------- Main Content Section -------------------------------------------------------- */
@@ -83,7 +102,7 @@ p
 #content-main, #content-projects, #content-contact
 {
 	background-color: #FFFFF8;
-	border-top: 1px solid #000000;
+	/*border-top: 1px solid #000000;*/
 	border-bottom: 1px solid #000000;
 	width: 100%;
 	padding-left: 2em;
