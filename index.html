@@ -1,66 +1,66 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<!-- <meta http-equiv="content-type" content="text/html; charset=UTF-8" /> -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
 		<!--[if lt IE 9]>
 			<script src="files/html5shiv.js"></script>
 		<![endif]-->
 		<meta http-equiv="Content-Style-Type" content="text/css" />
+
 		<title>Code Hobby</title>
-		<!-- <link href="jquery-ui-1.10.3.custom-black-tie/css/custom-black-tie/jquery-ui-1.10.3.custom.css" rel="stylesheet"> -->
+
+		<link rel="stylesheet" media="screen" href="reset.css" />
+
 		<script src="jquery-ui-1.10.3.custom/js/jquery-1.9.1.js"></script>
 		<script src="jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
-<!--
-		<script>
-			$(function() {//This function is what enables the tab functionality from jQuery UI.
-				$( "#tabs" ).tabs();
-			});
-		</script>
--->
+
 		<script>
 			$(document).ready( function() {
-				//Hide the projects and contact section by default.
-				//$( "#main" ).show();
-				$( "#content-main" ).show();
-				$( "#content-main" ).addclass( "content-background" );
-				$( "#content-projects" ).hide();
-				$( "#content-projects" ).removeclass( "content-background" );
-				$( "#content-contact" ).hide();
-				$( "#content-contact" ).removeclass( "content-background" );
+				showContent( "main" );
 
 				$( '#link-main' ).click( function() {
-					$( "#content-main" ).show();
-					$( "#content-main" ).addclass( "content-background" );
-					$( "#content-projects" ).hide();
-					$( "#content-projects" ).removeclass( "content-background" );
-					$( "#content-contact" ).hide();
-					$( "#content-contact" ).removeclass( "content-background" );
+					showContent( "main" );
 				});
 
 				$( '#link-projects' ).click( function() {
-					$( "#content-main" ).hide();
-					$( "#content-main" ).removeclass( "content-background" );
-					$( "#content-projects" ).show();
-					$( "#content-projects" ).addclass( "content-background" );
-					$( "#content-contact" ).hide();
-					$( "#content-contact" ).removeclass( "content-background" );
+					showContent( "projects" );
 				});
 
 				$( '#link-contact' ).click( function() {
-					$( "#content-main" ).hide();
-					$( "#content-main" ).removeclass( "content-background" );
-					$( "#content-projects" ).hide();
-					$( "#content-projects" ).removeclass( "content-background" );
-					$( "#content-contact" ).show();
-					$( "#content-contact" ).addclass( "content-background" );
+					showContent( "contact" );
 				});
-					
-				
 			});
+			
+			function showContent( content )
+			{
+				if( content == "main" )
+				{
+					$( "#content-main" ).show();
+					$( "#content-projects" ).hide();
+					$( "#content-contact" ).hide();
+				}
+				else if( content == "projects" )
+				{
+					$( "#content-projects" ).show();
+					$( "#content-main" ).hide();
+					$( "#content-contact" ).hide();
+				}
+				else if( content == "contact" )
+				{
+					$( "#content-contact" ).show();
+					$( "#content-main" ).hide();
+					$( "#content-projects" ).hide();
+				}
+				else
+				{
+					$( "#content-main" ).show();
+					$( "#content-projects" ).hide();
+					$( "#content-contact" ).hide();
+				}
+			}
 		</script>
-		<link rel="stylesheet" media="screen" href="reset.css" />
+
 		<link rel="stylesheet" media="screen" href="codehobby.css" />
 	</head>
 	<body>
@@ -72,7 +72,7 @@
 						<table>
 							<tr>
 								<td>
-									<a id="link-main" href="#content-main">Main</a>
+									<a id="link-main" href="#content-main">Home</a>
 								</td>
 								<td>
 									<a id="link-projects" href="#content-projects">Projects</a>
@@ -193,11 +193,17 @@
 						<br>
 						<textarea name="message" rows="6" cols="25"></textarea>
 						<br>
-						<?php
-							require_once('recaptchalib.php');
-							$publickey = "6LccK-8SAAAAAFOjA_GQodwAA0uxsXTnRDZ8a4B_";
-							echo recaptcha_get_html($publickey);
-						?>
+						<script type="text/javascript"
+							src="http://www.google.com/recaptcha/api/challenge?k=6LccK-8SAAAAAFOjA_GQodwAA0uxsXTnRDZ8a4B_">
+						</script>
+						<noscript>
+							<iframe src="http://www.google.com/recaptcha/api/noscript?k=6LccK-8SAAAAAFOjA_GQodwAA0uxsXTnRDZ8a4B_"
+								height="300" width="500" frameborder="0"></iframe><br>
+							<textarea name="recaptcha_challenge_field" rows="3" cols="40">
+							</textarea>
+							<input type="hidden" name="recaptcha_response_field"
+								value="manual_challenge">
+						</noscript>
 						<br>
 						<input type="submit" value="Send"><input type="reset" value="Clear">
 					</form>
