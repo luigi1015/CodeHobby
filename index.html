@@ -10,13 +10,11 @@
 
 		<title>Code Hobby</title>
 
-		<link rel="stylesheet" media="screen" href="reset.css" />
-
 		<script src="jquery-ui-1.10.3.custom/js/jquery-1.9.1.js"></script>
 		<script src="jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
 
 		<script>
-			$(document).ready( function() {
+			$( document ).ready( function() {
 				showContent( "main" );
 				selectContent( "main" );
 
@@ -35,6 +33,22 @@
 					selectContent( "contact" );
 				});
 			});
+			
+			$( "a" ).hover( 
+				function()
+				{
+						alert("alert 1");
+					if( $(this).hasClass( "header-deselected" ) )
+					{
+						$(this).addClass( "header-hover" );
+						alert("alert 2");
+					}
+				}, 
+				function()
+				{
+					$(this).removeClass( "header-hover" );
+				}
+			);
 			
 			function showContent( content )
 			{
@@ -69,33 +83,49 @@
 				if( content == "main" )
 				{
 					$( "#link-main" ).addClass( "header-selected" );
+					$( "#link-main" ).removeClass( "header-deselected" );
 					$( "#link-projects" ).removeClass( "header-selected" );
+					$( "#link-projects" ).addClass( "header-deselected" );
 					$( "#link-contact" ).removeClass( "header-selected" );
+					$( "#link-contact" ).addClass( "header-deselected" );
 				}
 				else if( content == "projects" )
 				{
 					$( "#link-projects" ).addClass( "header-selected" );
+					$( "#link-projects" ).removeClass( "header-deselected" );
 					$( "#link-main" ).removeClass( "header-selected" );
+					$( "#link-main" ).addClass( "header-deselected" );
 					$( "#link-contact" ).removeClass( "header-selected" );
+					$( "#link-contact" ).addClass( "header-deselected" );
 				}
 				else if( content == "contact" )
 				{
 					$( "#link-contact" ).addClass( "header-selected" );
+					$( "#link-contact" ).removeClass( "header-deselected" );
 					$( "#link-main" ).removeClass( "header-selected" );
+					$( "#link-main" ).addClass( "header-deselected" );
 					$( "#link-projects" ).removeClass( "header-selected" );
+					$( "#link-projects" ).addClass( "header-deselected" );
 				}
 				else
 				{
 					$( "#link-main" ).addClass( "header-selected" );
+					$( "#link-main" ).removeClass( "header-deselected" );
 					$( "#link-projects" ).removeClass( "header-selected" );
+					$( "#link-projects" ).addClass( "header-deselected" );
 					$( "#link-contact" ).removeClass( "header-selected" );
+					$( "#link-contact" ).addClass( "header-deselected" );
 				}
 			}
 		</script>
 
+		<link rel="stylesheet" media="screen" href="reset.css" />
 		<link rel="stylesheet" media="screen" href="codehobby.css" />
+		<link rel="stylesheet" href="smallscreen.css" media="only screen and (max-width: 30em)">
+		<link rel="stylesheet" href="bigscreen.css" media="only screen and (min-width: 31em)">
 	</head>
 	<body>
+
 		<!--<div id="tabs">--><!--Tabs div, this is what tells jquery ui this is the place it needs to set up the tabs.-->
 			<header role="banner">
 				<div id="header">
@@ -267,11 +297,6 @@
 											<a href="https://plus.google.com/110417500518525290729?prsrc=3" rel="publisher" target="_top" style="text-decoration:none;">
 												<img src="https://ssl.gstatic.com/images/icons/gplus-16.png" title="My Google+ Page" alt="Google+" style="border:0;width:16px;height:16px;"/>
 											</a>
-								</span>
-
-								<span class="social-element">
-											<!-- Facebook icon code -->
-											<iframe src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2Fcodehobby&amp;width&amp;height=35&amp;colorscheme=light&amp;layout=button&amp;show_faces=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:20px;" allowTransparency="true"></iframe>
 								</span>
 							</div>
 						</td>

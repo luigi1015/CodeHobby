@@ -72,17 +72,33 @@ header
 
 #link-main, #link-projects, #link-contact
 {
-	padding: 0.5em;
-	border-top-left-radius: 1em;
-	border-top-right-radius: 1em;
-	border-top: 2px solid;
-	border-left: 2px solid;
-	border-right: 2px solid;
 }
 
 .header-selected
 {
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+	border-bottom-left-radius: 0em;
+	border-bottom-right-radius: 0em;
+	border-top: 2px solid;
+	border-left: 2px solid;
+	border-right: 2px solid;
+	border-bottom: 1px solid;
+	border-bottom-color: #FFFFF8;
+	padding: 0.5em;
 	background-color: #FFFFF8;
+}
+
+.header-deselected
+{
+	padding: 0.5em;
+	border: none;
+}
+
+nav a:hover
+{
+	background-color: #24478F;
+	color: white;
 }
 
 nav a
@@ -158,4 +174,9 @@ form
 .social-element
 {
 	padding-right: 1em; 
+}
+
+.testing
+{
+	background-color: #aaa;
 }

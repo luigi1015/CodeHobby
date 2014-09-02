@@ -1,0 +1,27 @@
+.social-element
+{
+	display: inline;
+}
+
+#content-projects article
+{
+	width: 30em;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#content-main article
+{
+}
+
+#content-main
+{
+}
+
+#content-main p
+{
+	width: 67%;
+	display: inline-block;
+	margin-left: 12%;
+	vertical-align: top;
+}
