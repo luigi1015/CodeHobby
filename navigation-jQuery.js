@@ -1,21 +1,30 @@
 $( document ).ready( function() {
-	showContent( "main" );
-	selectContent( "main" );
+	//showContent( "main" );
+/*
+	selectContentLink( "main" );
 
 	$( '#link-main' ).click( function() {
 		showContent( "main" );
-		selectContent( "main" );
+		selectContentLink( "main" );
+		scrollTop();
 	});
 
 	$( '#link-projects' ).click( function() {
 		showContent( "projects" );
-		selectContent( "projects" );
+		selectContentLink( "projects" );
+		scrollTop();
 	});
 
 	$( '#link-contact' ).click( function() {
 		showContent( "contact" );
-		selectContent( "contact" );
+		selectContentLink( "contact" );
+		scrollTop();
 	});
+*/
+});
+
+$(function() {
+	$( "#tabs" ).tabs({ active: 0 });
 });
 			
 $( "a" ).hover( 
@@ -31,36 +40,34 @@ $( "a" ).hover(
 		$(this).removeClass( "header-hover" );
 	}
 );
-			
+
+var animationDuration = 10;
+
 function showContent( content )
 {
 	if( content == "main" )
 	{
-		$( "#content-main" ).show();
-		$( "#content-projects" ).hide();
-		$( "#content-contact" ).hide();
+		$( "#content-contact, #content-projects" ).addClass( "hidden" );
+		$( "#content-main" ).removeClass( "hidden" );
 	}
 	else if( content == "projects" )
 	{
-		$( "#content-projects" ).show();
-		$( "#content-main" ).hide();
-		$( "#content-contact" ).hide();
+		$( "#content-contact, #content-main" ).addClass( "hidden" );
+		$( "#content-projects" ).removeClass( "hidden" );
 	}
 	else if( content == "contact" )
 	{
-		$( "#content-contact" ).show();
-		$( "#content-main" ).hide();
-		$( "#content-projects" ).hide();
+		$( "#content-projects, #content-main" ).addClass( "hidden" );
+		$( "#content-contact" ).removeClass( "hidden" );
 	}
 	else
 	{
-		$( "#content-main" ).show();
-		$( "#content-projects" ).hide();
-		$( "#content-contact" ).hide();
+		$( "#content-contact, #content-projects" ).addClass( "hidden" );
+		$( "#content-main" ).removeClass( "hidden" );
 	}
 }
 
-function selectContent( content )
+function selectContentLink( content )
 {
 	if( content == "main" )
 	{
@@ -98,4 +105,11 @@ function selectContent( content )
 		$( "#link-contact" ).removeClass( "header-selected" );
 		$( "#link-contact" ).addClass( "header-deselected" );
 	}
+}
+
+function scrollTop()
+{
+	$('html, body').animate({
+        scrollTop: $("h1").offset().top
+    }, animationDuration);
 }

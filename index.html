@@ -29,41 +29,32 @@
 		<link rel="stylesheet" href="bigscreen.css" media="only screen and (min-width: 31em)">
 	</head>
 	<body>
-
-		<!--<div id="tabs">--><!--Tabs div, this is what tells jquery ui this is the place it needs to set up the tabs.-->
+		<div id="tabs"><!--Tabs div, this is what tells jquery ui this is the place it needs to set up the tabs.-->
 			<header role="banner">
 				<div id="header">
 					<h1>Code Hobby</h1>
 					<nav role="navigation">
-						<table>
-							<tr>
-								<td>
-									<a id="link-main" href="#content-main">Home</a>
-								</td>
-								<td>
-									<a id="link-projects" href="#content-projects">Projects</a>
-								</td>
-								<td>
-									<a id="link-contact" href="#content-contact">Contact</a>
-								</td>
-							</tr>
-						</table>
+						<ul><!--This is the menu for the tabs.-->
+							<li><a id="link-main" href="#content-main">Home</a></li>
+							<li><a id="link-projects" href="#content-projects">Projects</a></li>
+							<li><a id="link-contact" href="#content-contact">Contact</a></li>
+						</ul>
 					</nav>
 				</div>
 			</header>
-			<!--<div id="main">--><!--Main Section-->
-				<div id="content-main">
+			<div id="main"><!--Main Section-->
+				<div id="content-main" class="content">
 					<article>
 						<p>Code Hobby is a project I started in 2013 to do some programming in my spare time. The projects have no real common theme except what I'm interested in working on at the time. They range from small proof of concept pojects to satisfy my curiosity to larger projects meant to be used. The code has been and will be open source whenever possible.</p>
 						<p>As I work on more programming projects, I'll link to them on this site. Feel free to use the code as allowed by the license.</p>
 						<p>Please feel free to take a look at some of the projects in the Projects section.</p>
 					</article>
 				</div>
-				<div id="content-projects">
-					<h2>Programs under the CodeHobbyNet GitHub organization.</h2>
+				<div id="content-projects" class="content">
+					<h2>CodeHobbyNet Programs</h2>
 					<div ng-controller='CodeHobbyProjectsController'>
 						<span ng-repeat='project in projects'>
-							<article ng-class="projects-article" class="projects-article">
+							<article>
 								<p>
 									<a href="{{project.html_url}}" target="_blank" class="project-link">{{project.name}}</a>
 									<br>
@@ -72,7 +63,7 @@
 							</article>
 						</span>
 					</div>
-					<h2>Programs under my github user, luigi1015.</h2>
+					<h2>luigi1015 Programs</h2>
 					<div ng-controller='Luigi1015ProjectsController'>
 						<span ng-repeat='project in projects'>
 							<article ng-class="projects-article" class="projects-article">
@@ -85,7 +76,7 @@
 						</span>
 					</div>
 				</div>
-				<div id="content-contact">
+				<div id="content-contact" class="content">
 					<form action="mail.php" method="POST">
 						Fill this form out and press send to send me a note.
 						<br>
@@ -127,8 +118,8 @@
 						<input type="submit" value="Send"><input type="reset" value="Clear">
 					</form>
 				</div>
-			<!--</div>--><!--Main Section-->
-		<!--</div>--><!--Tabs div-->
+			</div><!--Main Section-->
+		</div><!--Tabs div-->
 
 		<div id="footer">
 			<br>

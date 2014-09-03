@@ -11,17 +11,15 @@
 	min-height: 7em;
 }
 
-#content-main article
-{
-}
-
-#content-main
-{
-}
-
 #content-main p
 {
 	width: 85%;
 	display: inline-block;
 	vertical-align: top;
+}
+
+nav li a
+{
+	padding-left: 10em;
+	padding-right: 10em;
 }

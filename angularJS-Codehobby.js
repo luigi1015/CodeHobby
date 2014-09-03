@@ -21,3 +21,11 @@ function CodeHobbyProjectsController($scope, $http) {
 		}
 	);
 }
+
+function setColorProgram($scope, $isEven) {
+
+	if( $isEven )
+	{
+		return { 'background-color': '#D6E0F5' };
+	}
+}
