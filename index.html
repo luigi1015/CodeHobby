@@ -13,146 +13,15 @@
 		<!--jQuery javascript-->
 		<script src="jquery-ui-1.10.3.custom/js/jquery-1.9.1.js"></script>
 		<script src="jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
+
+		<!--javascript for hiding and showing the main conent sections using jQuery-->
+		<script src="navigation-jQuery.js"></script>
 		
 		<!--AngularJS javascript-->
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
-
-		<!--javascript for hiding and showing the main conent sections using jQuery-->
-		<script>
-			$( document ).ready( function() {
-				showContent( "main" );
-				selectContent( "main" );
-
-				$( '#link-main' ).click( function() {
-					showContent( "main" );
-					selectContent( "main" );
-				});
-
-				$( '#link-projects' ).click( function() {
-					showContent( "projects" );
-					selectContent( "projects" );
-				});
-
-				$( '#link-contact' ).click( function() {
-					showContent( "contact" );
-					selectContent( "contact" );
-				});
-			});
-			
-			$( "a" ).hover( 
-				function()
-				{
-						alert("alert 1");
-					if( $(this).hasClass( "header-deselected" ) )
-					{
-						$(this).addClass( "header-hover" );
-						alert("alert 2");
-					}
-				}, 
-				function()
-				{
-					$(this).removeClass( "header-hover" );
-				}
-			);
-			
-			function showContent( content )
-			{
-				if( content == "main" )
-				{
-					$( "#content-main" ).show();
-					$( "#content-projects" ).hide();
-					$( "#content-contact" ).hide();
-				}
-				else if( content == "projects" )
-				{
-					$( "#content-projects" ).show();
-					$( "#content-main" ).hide();
-					$( "#content-contact" ).hide();
-				}
-				else if( content == "contact" )
-				{
-					$( "#content-contact" ).show();
-					$( "#content-main" ).hide();
-					$( "#content-projects" ).hide();
-				}
-				else
-				{
-					$( "#content-main" ).show();
-					$( "#content-projects" ).hide();
-					$( "#content-contact" ).hide();
-				}
-			}
-			
-			function selectContent( content )
-			{
-				if( content == "main" )
-				{
-					$( "#link-main" ).addClass( "header-selected" );
-					$( "#link-main" ).removeClass( "header-deselected" );
-					$( "#link-projects" ).removeClass( "header-selected" );
-					$( "#link-projects" ).addClass( "header-deselected" );
-					$( "#link-contact" ).removeClass( "header-selected" );
-					$( "#link-contact" ).addClass( "header-deselected" );
-				}
-				else if( content == "projects" )
-				{
-					$( "#link-projects" ).addClass( "header-selected" );
-					$( "#link-projects" ).removeClass( "header-deselected" );
-					$( "#link-main" ).removeClass( "header-selected" );
-					$( "#link-main" ).addClass( "header-deselected" );
-					$( "#link-contact" ).removeClass( "header-selected" );
-					$( "#link-contact" ).addClass( "header-deselected" );
-				}
-				else if( content == "contact" )
-				{
-					$( "#link-contact" ).addClass( "header-selected" );
-					$( "#link-contact" ).removeClass( "header-deselected" );
-					$( "#link-main" ).removeClass( "header-selected" );
-					$( "#link-main" ).addClass( "header-deselected" );
-					$( "#link-projects" ).removeClass( "header-selected" );
-					$( "#link-projects" ).addClass( "header-deselected" );
-				}
-				else
-				{
-					$( "#link-main" ).addClass( "header-selected" );
-					$( "#link-main" ).removeClass( "header-deselected" );
-					$( "#link-projects" ).removeClass( "header-selected" );
-					$( "#link-projects" ).addClass( "header-deselected" );
-					$( "#link-contact" ).removeClass( "header-selected" );
-					$( "#link-contact" ).addClass( "header-deselected" );
-				}
-			}
-		</script>
 		
-		<!--AngularJS javascript for the projects/programs section-->
-		<script>
-			var prjcts = [{name:'SudokuCreator', description: 'A C++ command line program to create random Sudoku puzzles.', url: 'https://github.com/luigi1015/SudokuCreator'},
-				{name:'Random-Cpp', description: 'Some C++ code to generate various types of pseudo-random data.', url: 'https://github.com/luigi1015/Random-Cpp'},
-				{name:'Powerball ', description: 'A C++ project to automatically download, save and do some very basic statistical analysis of the previously drawn Powerball numbers. It works but needs some optimization.', url: 'https://github.com/luigi1015/Powerball'},
-				{name:'Quicksort-CPP ', description: 'A little bit of C++ code that implements an in-place version of Quicksort.', url: 'https://github.com/luigi1015/Quicksort-CPP'}];
-
-			function Luigi1015ProjectsController($scope, $http) {
-
-				$http({method: 'GET', url: 'https://api.github.com/users/luigi1015/repos'}).
-					success(function(data, status, headers, config) {
-						$scope.projects = data;
-					}).
-					error(function(data, status, headers, config) {
-						alert( "Problem getting the program data, status code " + status );
-					});
-			}
-
-			function CodeHobbyProjectsController($scope, $http) {
-
-				$http({method: 'GET', url: 'https://api.github.com/orgs/codehobbynet/repos'}).
-					success(function(data, status, headers, config) {
-						$scope.projects = data;
-					}).
-					error(function(data, status, headers, config) {
-						alert( "Problem getting the program data, status code " + status );
-					});
-			}
-		</script>
+		<!--AngularJS javascript specifically for this web page.-->
+		<script src="angularJS-Codehobby.js"></script>
 
 		<link rel="stylesheet" media="screen" href="reset.css" />
 		<link rel="stylesheet" media="screen" href="codehobby.css" />
