@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,9 +10,14 @@
 
 		<title>Code Hobby</title>
 
+		<!--jQuery javascript-->
 		<script src="jquery-ui-1.10.3.custom/js/jquery-1.9.1.js"></script>
 		<script src="jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
+		
+		<!--AngularJS javascript-->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 
+		<!--javascript for hiding and showing the main conent sections using jQuery-->
 		<script>
 			$( document ).ready( function() {
 				showContent( "main" );
@@ -118,6 +123,36 @@
 				}
 			}
 		</script>
+		
+		<!--AngularJS javascript for the projects/programs section-->
+		<script>
+			var prjcts = [{name:'SudokuCreator', description: 'A C++ command line program to create random Sudoku puzzles.', url: 'https://github.com/luigi1015/SudokuCreator'},
+				{name:'Random-Cpp', description: 'Some C++ code to generate various types of pseudo-random data.', url: 'https://github.com/luigi1015/Random-Cpp'},
+				{name:'Powerball ', description: 'A C++ project to automatically download, save and do some very basic statistical analysis of the previously drawn Powerball numbers. It works but needs some optimization.', url: 'https://github.com/luigi1015/Powerball'},
+				{name:'Quicksort-CPP ', description: 'A little bit of C++ code that implements an in-place version of Quicksort.', url: 'https://github.com/luigi1015/Quicksort-CPP'}];
+
+			function Luigi1015ProjectsController($scope, $http) {
+
+				$http({method: 'GET', url: 'https://api.github.com/users/luigi1015/repos'}).
+					success(function(data, status, headers, config) {
+						$scope.projects = data;
+					}).
+					error(function(data, status, headers, config) {
+						alert( "Problem getting the program data, status code " + status );
+					});
+			}
+
+			function CodeHobbyProjectsController($scope, $http) {
+
+				$http({method: 'GET', url: 'https://api.github.com/orgs/codehobbynet/repos'}).
+					success(function(data, status, headers, config) {
+						$scope.projects = data;
+					}).
+					error(function(data, status, headers, config) {
+						alert( "Problem getting the program data, status code " + status );
+					});
+			}
+		</script>
 
 		<link rel="stylesheet" media="screen" href="reset.css" />
 		<link rel="stylesheet" media="screen" href="codehobby.css" />
@@ -156,78 +191,30 @@
 					</article>
 				</div>
 				<div id="content-projects">
-					<h2>Programs</h2>
-					<article>
-						<p><a href="https://github.com/luigi1015/SudokuCreator" target="_blank">SudokuCreator</a>
-						<br>
-						A C++ command line program to create random Sudoku puzzles.</p>
-					</article>
-
-					<article>
-						<p><a href="https://github.com/luigi1015/Random-Cpp" target="_blank">Random-Cpp</a>
-						<br>
-						Some C++ code to generate various types of pseudo-random data.</p>
-					</article>
-
-					<article>
-						<p><a href="https://github.com/luigi1015/Powerball" target="_blank">Powerball</a>
-						<br>
-						A C++ project to automatically download, save and do some very basic statistical analysis of the previously drawn Powerball numbers. It works but needs some optimization.</p>
-					</article>
-
-					<article>
-						<p><a href="https://github.com/luigi1015/Quicksort-CPP" target="_blank">Quicksort-CPP</a>
-						<br>
-						A little bit of C++ code that implements an in-place version of Quicksort.</p>
-					</article>
-
-					<article>
-						<p><a href="https://github.com/luigi1015/InsertionSort-Cpp" target="_blank">InsertionSort-Cpp</a>
-						<br>
-						Some C++ code that implements a version of Insertion Sort.</p>
-					</article>
-
-					<article>
-						<p><a href="https://github.com/luigi1015/Heapsort-Cpp" target="_blank">Heapsort-Cpp</a>
-						<br>
-						A small C++ project that implements a version of Heapsort.</p>
-					</article>
-
-					<article>
-						<p><a href="https://github.com/luigi1015/CountingSort-Cpp" target="_blank">CountingSort-Cpp</a>
-						<br>
-						A few lines of C++ code that implements a version of Counting Sort.</p>
-					</article>
-
-					<article>
-						<p><a href="https://github.com/luigi1015/Quicksort-Java" target="_blank">Quicksort-Java</a>
-						<br>
-						Like Quicksort-CPP, it's some code that implements an in-place version of Quicksort. The difference is this one is in Java.</p>
-					</article>
-
-					<article>
-						<p><a href="https://github.com/luigi1015/Timesheet" target="_blank">Timesheet</a>
-						<br>
-						A small Java project for use at work to create a timesheet. It still needs some work.</p>
-					</article>
-
-					<article>
-						<p><a href="https://github.com/luigi1015/GCD" target="_blank">GCD</a>
-						<br>
-						A very small project to figure out the greatest common divisor of two different numbers.</p>
-					</article>
-
-					<article>
-						<p><a href="https://github.com/luigi1015/PrimeGenerator" target="_blank">PrimeGenerator</a>
-						<br>
-						A small program to generate some primes starting with the smallest and working from there. Like a few of these projects, it's more of a proof of concept to satisfy some curiosity of mine than anything meant to be used in production.</p>
-					</article>
-
-					<article>
-						<p><a href="https://github.com/luigi1015/PiGenerator" target="_blank">PiGenerator</a>
-						<br>
-						A small program to generate the first few digits of Pi.</p>
-					</article>
+					<h2>Programs under the CodeHobbyNet GitHub organization.</h2>
+					<div ng-controller='CodeHobbyProjectsController'>
+						<span ng-repeat='project in projects'>
+							<article ng-class="projects-article" class="projects-article">
+								<p>
+									<a href="{{project.url}}" target="_blank" class="project-link">{{project.name}}</a>
+									<br>
+									{{project.description}}
+								</p>
+							</article>
+						</span>
+					</div>
+					<h2>Programs under my github user, luigi1015.</h2>
+					<div ng-controller='Luigi1015ProjectsController'>
+						<span ng-repeat='project in projects'>
+							<article ng-class="projects-article" class="projects-article">
+								<p>
+									<a href="{{project.url}}" target="_blank" class="project-link">{{project.name}}</a>
+									<br>
+									{{project.description}}
+								</p>
+							</article>
+						</span>
+					</div>
 				</div>
 				<div id="content-contact">
 					<form action="mail.php" method="POST">

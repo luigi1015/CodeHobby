@@ -8,6 +8,7 @@
 	width: 30em;
 	display: inline-block;
 	vertical-align: top;
+	min-height: 7em;
 }
 
 #content-main article
