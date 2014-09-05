@@ -23,10 +23,12 @@
 		<!--AngularJS javascript specifically for this web page.-->
 		<script src="angularJS-Codehobby.js"></script>
 
+		<!--Main CSS for this page.-->
 		<link rel="stylesheet" media="screen" href="reset.css" />
 		<link rel="stylesheet" media="screen" href="codehobby.css" />
-		<link rel="stylesheet" href="smallscreen.css" media="only screen and (max-width: 30em)">
-		<link rel="stylesheet" href="bigscreen.css" media="only screen and (min-width: 31em)">
+		<link rel="stylesheet" href="smallscreen.css" media="only screen and (max-width: 41em)">
+		<link rel="stylesheet" href="midscreen.css" media="only screen and (min-width: 42em) and (max-width: 73em)">
+		<link rel="stylesheet" href="bigscreen.css" media="only screen and (min-width: 73em)">
 	</head>
 	<body>
 		<div id="tabs"><!--Tabs div, this is what tells jquery ui this is the place it needs to set up the tabs.-->
@@ -53,27 +55,23 @@
 				<div id="content-projects" class="content">
 					<h2>CodeHobbyNet Programs</h2>
 					<div ng-controller='CodeHobbyProjectsController'>
-						<span ng-repeat='project in projects'>
-							<article>
-								<p>
-									<a href="{{project.html_url}}" target="_blank" class="project-link">{{project.name}}</a>
-									<br>
-									{{project.description}}
-								</p>
-							</article>
-						</span>
+						<article ng-repeat='project in projects'>
+							<p>
+								<a href="{{project.html_url}}" target="_blank" class="project-link">{{project.name}}</a>
+								<br>
+								{{project.description}}
+							</p>
+						</article>
 					</div>
 					<h2>luigi1015 Programs</h2>
 					<div ng-controller='Luigi1015ProjectsController'>
-						<span ng-repeat='project in projects'>
-							<article ng-class="projects-article" class="projects-article">
-								<p>
-									<a href="{{project.url}}" target="_blank" class="project-link">{{project.name}}</a>
-									<br>
-									{{project.description}}
-								</p>
-							</article>
-						</span>
+						<article ng-repeat='project in projects'>
+							<p>
+								<a href="{{project.url}}" target="_blank" class="project-link">{{project.name}}</a>
+								<br>
+								{{project.description}}
+							</p>
+						</article>
 					</div>
 				</div>
 				<div id="content-contact" class="content">
@@ -83,39 +81,48 @@
 						None of the fields are required but I'd like at least you name, a message and some contact info.
 						<br>
 						<br>
-						Name
-						<br>
-						<input type="text" name="name">
-						<br>
-						<br>
-						Email
-						<br>
-						<input type="text" name="email">
-						<br>
-						<br>
-						Phone
-						<br>
-						<input type="text" name="phone">
-						<br>
-						<br>
-						Message
-						<br>
-						<textarea name="message" rows="6" cols="25"></textarea>
-						<br>
-						<br>
-						<script type="text/javascript"
-							src="http://www.google.com/recaptcha/api/challenge?k=6LccK-8SAAAAAFOjA_GQodwAA0uxsXTnRDZ8a4B_">
-						</script>
-						<noscript>
-							<iframe src="http://www.google.com/recaptcha/api/noscript?k=6LccK-8SAAAAAFOjA_GQodwAA0uxsXTnRDZ8a4B_"
-								height="300" width="500" frameborder="0"></iframe><br>
-							<textarea name="recaptcha_challenge_field" rows="3" cols="40">
-							</textarea>
-							<input type="hidden" name="recaptcha_response_field"
-								value="manual_challenge">
-						</noscript>
-						<br>
-						<input type="submit" value="Send"><input type="reset" value="Clear">
+						<div class='form-section'>
+							<div class='form-chunk'>
+								Name
+								<br>
+								<input type="text" name="name" class='form-input' id='form-name'>
+							</div>
+							<div class='form-chunk'>
+								Email
+								<br>
+								<input type="text" name="email" class='form-input' id='form-email'>
+							</div>
+							<div class='form-chunk'>
+								Phone
+								<br>
+								<input type="text" name="phone" class='form-input' id='form-phone'>
+							</div>
+						</div>
+						<div class='form-section'>
+							<div class='form-chunk'>
+								Message
+								<br>
+								<textarea name="message" rows="6" cols="25" class='form-input' id='form-message'></textarea>
+							</div>
+						</div>
+						<div class='form-section'>
+							<div class='form-chunk'>
+								<script type="text/javascript"
+									src="http://www.google.com/recaptcha/api/challenge?k=6LccK-8SAAAAAFOjA_GQodwAA0uxsXTnRDZ8a4B_">
+								</script>
+								<noscript>
+									<iframe src="http://www.google.com/recaptcha/api/noscript?k=6LccK-8SAAAAAFOjA_GQodwAA0uxsXTnRDZ8a4B_"
+										height="300" width="500" frameborder="0"></iframe><br>
+									<textarea name="recaptcha_challenge_field" rows="3" cols="40">
+									</textarea>
+									<input type="hidden" name="recaptcha_response_field"
+										value="manual_challenge">
+								</noscript>
+							</div>
+						</div>
+						<div class='form-submit'>
+							<input type="submit" value="Send"><input type="reset" value="Clear">
+						</div>
 					</form>
 				</div>
 			</div><!--Main Section-->

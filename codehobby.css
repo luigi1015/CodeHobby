@@ -195,6 +195,7 @@ nav a:focus
 	background-color: #D6E0F5;
 	border-radius: 1em;
 	box-shadow: 0.25em 0.25em 0.125em #888888;
+	text-align: left;
 }
 
 #content-projects h2
@@ -203,12 +204,39 @@ nav a:focus
 	text-decoration: underline;
 }
 
+#content-projects
+{
+	text-align: center;
+}
+
+#content-projects div
+{
+	padding-bottom: 2em;
+}
+
 /* -------------------------------------------------------- Main Content - Contact Section -------------------------------------------------------- */
 form
 {
-	display: inline-block;
 	text-align: left;
 	padding: 1em;
+}
+
+.form-chunk
+{
+	display: inline-block;
+	vertical-align: top;
+	padding: 1em;
+	float: left;
+}
+
+.form-submit, .form-section
+{
+	clear: both;
+}
+
+#form-message
+{
+	height: 25em;
 }
 
 /* -------------------------------------------------------- Footer -------------------------------------------------------- */

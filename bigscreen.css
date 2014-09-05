@@ -5,10 +5,11 @@
 
 #content-projects article
 {
-	width: 30em;
+	width: 30%;
 	display: inline-block;
 	vertical-align: top;
 	min-height: 7em;
+	min-width: 12em;
 }
 
 #content-main p
@@ -22,4 +23,14 @@ nav li a
 {
 	padding-left: 10em;
 	padding-right: 10em;
+}
+
+#form-name, #form-email
+{
+	min-width: 20em;
+}
+
+#form-message
+{
+	width: 70em;
 }
