@@ -170,14 +170,28 @@ nav a:focus
 	padding-bottom: 2em;
 }
 
-#content-main, #content-projects
+/* -------------------------------------------------------- Main Content - Main Section -------------------------------------------------------- */
+
+#content-main article
+{
+	margin-top: 2em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#content-main p
+{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 70em;
+}
+
+/* -------------------------------------------------------- Main Content - Projects Section -------------------------------------------------------- */
+
+#content-projects
 {
 	text-align: left;
 }
-
-/* -------------------------------------------------------- Main Content - Main Section -------------------------------------------------------- */
-
-/* -------------------------------------------------------- Main Content - Projects Section -------------------------------------------------------- */
 
 .project-link
 {
@@ -226,12 +240,20 @@ form
 	display: inline-block;
 	vertical-align: top;
 	padding: 1em;
+	padding-left: 0em;
 	float: left;
 }
 
 .form-submit, .form-section
 {
 	clear: both;
+}
+
+.form-section
+{/*
+	padding-left: 0em;
+	border: 1px solid #000000;
+	*/
 }
 
 #form-message
