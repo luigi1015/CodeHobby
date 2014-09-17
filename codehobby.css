@@ -72,29 +72,56 @@ p
 header
 {
 	padding-bottom: 0.5em;
+	text-align: center;
+/*
+	height: 7em;
+*/
+}
+
+#header
+{
+	/*display: inline-table;*/
+	border: 1px solid #000000;
+}
+
+h1
+{
+	display: inline-block;
+	width: 10em;
+	vertical-align: middle;
 }
 
 nav
 {
-	display: table;
-	width: 100%;
+	display: inline-block;
+	vertical-align: middle;
+/*
+	height: 7.5em;
+	border: 1px solid #000000;
+*/
 }
 
 nav ul
 {
-	display: table-row;
+	display: inline-block;
+	height: 100%;
 }
 
 nav li
 {
 	list-style: none;
-	display: table-cell;
+	display: inline-block;
+/*
+	height: 100%;
+	border: 1px solid #000000;
+*/
+	vertical-align: middle;
 }
 
 nav .ui-tabs-nav
 {
 }
-
+/*
 nav li a
 {
 	border-top-left-radius: 1em;
@@ -123,6 +150,14 @@ nav li a
 	border-bottom-color: #FFFFF8;
 	background-color: #FFFFF8;
 }
+*/
+nav li a
+{
+}
+
+.ui-state-active a
+{
+}
 
 nav a:hover
 {
@@ -133,6 +168,11 @@ nav a:hover
 nav a
 {
 	text-decoration: none;
+/*
+	vertical-align: middle;
+	height: 100%;
+*/
+	display: inline-block;
 }
 
 nav a:focus
