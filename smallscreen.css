@@ -3,3 +3,8 @@
 	display: block;
 	margin-top: 1em;
 }
+
+nav li a
+{
+	padding: 1em;
+}

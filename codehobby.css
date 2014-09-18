@@ -81,7 +81,7 @@ header
 #header
 {
 	/*display: inline-table;*/
-	border: 1px solid #000000;
+	/*border: 1px solid #000000;*/
 }
 
 h1
@@ -110,7 +110,6 @@ nav ul
 nav li
 {
 	list-style: none;
-	display: inline-block;
 /*
 	height: 100%;
 	border: 1px solid #000000;
@@ -157,6 +156,7 @@ nav li a
 
 .ui-state-active a
 {
+	color: white;
 }
 
 nav a:hover
