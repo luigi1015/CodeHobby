@@ -1,7 +1,7 @@
 /* -------------------------------------------------------- Whole Page -------------------------------------------------------- */
 html, body
 {
-	background-color:  #3366CC; /*#FFFFF8;*/ /*#5E5E5E;*/
+	background-color:  #336699; /*#3366CC;*/ /*#FFFFF8;*/ /*#5E5E5E;*/
 }
 
 body, div
@@ -68,6 +68,10 @@ p
 	background-color:  #3366CC;
 }
 
+#mainTitle
+{
+	text-shadow: 1px 1px 2px #24476B;
+}
 /* -------------------------------------------------------- Header - Navigation Tabs -------------------------------------------------------- */
 header
 {
@@ -114,6 +118,7 @@ nav li
 	height: 100%;
 	border: 1px solid #000000;
 */
+	overflow: hidden;
 	vertical-align: middle;
 }
 
@@ -161,8 +166,9 @@ nav li a
 
 nav a:hover
 {
+	border-radius: 1em;
 	background-color: #24478F;
-	color: white;
+	color: #C0C0C0/*white*/;
 }
 
 nav a
