@@ -94,3 +94,8 @@ nav a:hover
 {
 	float: right;
 }
+
+article
+{
+	padding: 1em;
+}
