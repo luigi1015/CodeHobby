@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<!--[if lt IE 9]>
+			<script src="files/html5shiv.js"></script>
+		<![endif]-->
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+
+		<title>Code Hobby</title>
+
+		<!--jQuery javascript-->
+		<!--
+		<script src="jquery-ui-1.10.3.custom/js/jquery-1.9.1.js"></script>
+		<script src="jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
+		-->
+
+		<!--javascript for hiding and showing the main conent sections using jQuery-->
+		<script src="navigation-jQuery.js"></script>
+		
+		<!--AngularJS javascript-->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+		
+		<!--AngularJS javascript specifically for this web page.-->
+		<script src="angularJS-Codehobby.js"></script>
+
+		<!--Main CSS for this page.-->
+		<!--<link rel="stylesheet" media="screen" href="reset.css" />-->
+		<link rel="stylesheet" media="screen" href="codehobby.css" />
+		<link rel="stylesheet" href="smallscreen.css" media="only screen and (max-width: 41em)">
+		<!--<link rel="stylesheet" href="midscreen.css" media="only screen and (min-width: 42em) and (max-width: 73em)">-->
+		<link rel="stylesheet" href="bigscreen.css" media="only screen and (min-width: 73em)">
+	</head>
+	<body>
+			<header role="banner">
+					<h1 id="mainTitle">Code Hobby</h1>
+					<nav>
+						<ul>
+							<li><a href="#content-main">Home</a></li>
+							<li><a href="#content-projects">Projects</a></li>
+							<li><a href="#content-contact">Contact</a></li>
+						</ul>
+					</nav>
+			</header>
+					<article>
+						<p>Code Hobby is a project I started in 2013 to do some programming in my spare time. The projects have no real common theme except what I'm interested in working on at the time. They range from small proof of concept pojects to satisfy my curiosity to larger projects meant to be used. The code has been and will be open source whenever possible.</p>
+						<p>As I work on more programming projects, I'll link to them on this site. Feel free to use the code as allowed by the license.</p>
+						<p>Please feel free to take a look at some of the projects in the Projects section.</p>
+					</article>
+
+					<h2>CodeHobbyNet Programs</h2>
+					<div ng-controller='CodeHobbyProjectsController'>
+						<article ng-repeat='project in projects'>
+							<p>
+								<a href="{{project.html_url}}" target="_blank" class="project-link">{{project.name}}</a>
+								<br>
+								{{project.description}}
+							</p>
+						</article>
+					</div>
+					<h2>luigi1015 Programs</h2>
+					<div ng-controller='Luigi1015ProjectsController'>
+						<article ng-repeat='project in projects'>
+							<p>
+								<a href="{{project.url}}" target="_blank" class="project-link">{{project.name}}</a>
+								<br>
+								{{project.description}}
+							</p>
+						</article>
+					</div>
+
+					<form action="mail.php" method="POST">
+						Fill this form out and press send to send me a note.
+						<br>
+						None of the fields are required but I'd like at least you name, a message and some contact info.
+						<br>
+						<br>
+						<div class='form-section'>
+							<div class='form-chunk'>
+								Name
+								<br>
+								<input type="text" name="name" class='form-input' id='form-name'>
+							</div>
+							<div class='form-chunk'>
+								Email
+								<br>
+								<input type="text" name="email" class='form-input' id='form-email'>
+							</div>
+							<div class='form-chunk'>
+								Phone
+								<br>
+								<input type="text" name="phone" class='form-input' id='form-phone'>
+							</div>
+						</div>
+						<div class='form-section'>
+							<div class='form-chunk'>
+								Message
+								<br>
+								<textarea name="message" rows="6" cols="25" class='form-input' id='form-message'></textarea>
+							</div>
+						</div>
+						<div class='form-section'>
+							<div class='form-chunk'>
+								<script type="text/javascript"
+									src="http://www.google.com/recaptcha/api/challenge?k=6LccK-8SAAAAAFOjA_GQodwAA0uxsXTnRDZ8a4B_">
+								</script>
+								<noscript>
+									<iframe src="http://www.google.com/recaptcha/api/noscript?k=6LccK-8SAAAAAFOjA_GQodwAA0uxsXTnRDZ8a4B_"
+										height="300" width="500" frameborder="0"></iframe><br>
+									<textarea name="recaptcha_challenge_field" rows="3" cols="40">
+									</textarea>
+									<input type="hidden" name="recaptcha_response_field"
+										value="manual_challenge">
+								</noscript>
+							</div>
+						</div>
+						<div class='form-submit'>
+							<input type="submit" value="Send"><input type="reset" value="Clear">
+						</div>
+					</form>
+
+			<footer>
+				<table>
+					<tr>
+						<td>
+							<div id="footer-left">
+								<span class="social-element">
+											<!-- GitHub -->
+											<a href="https://github.com/organizations/CodeHobbyNet" target="_blank"><img src="Icons/GitHub-Mark-32px.png" title="My GitHub Page" alt="GitHub" width="32" height="32"></a>
+								</span>
+
+								<span class="social-element">
+											<!-- Twitter icon code -->
+											<a href="https://twitter.com/CodeHobbyNet" class="twitter-follow-button" data-show-count="false" data-show-screen-name="false">Follow @CodeHobbyNet</a>
+											<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+								</span>
+
+								<span class="social-element">
+
+											<!-- Google+ icon code -->
+											<a href="https://plus.google.com/110417500518525290729?prsrc=3" rel="publisher" target="_top" style="text-decoration:none;">
+												<img src="https://ssl.gstatic.com/images/icons/gplus-16.png" title="My Google+ Page" alt="Google+" style="border:0;width:16px;height:16px;"/>
+											</a>
+								</span>
+							</div>
+						</td>
+						<td>
+							<div id="footer-right">
+								<a href="LICENSE" target="_blank">©2016 Code Hobby</a>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</footer>
+		</div>
+	</body>
+</html>
