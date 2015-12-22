@@ -1,3 +1,4 @@
+/*
 nav li a
 {
 	padding: 1em;
@@ -23,4 +24,34 @@ nav
 	margin-right: auto;
 	display: block;
 	width: 100%;
+}
+*/
+
+nav ul
+{
+	list-style-type: none;
+	margin: 0em;
+	padding: 0em;
+	overflow: hidden;
+	background-color:  #336699;
+}
+
+nav li
+{
+	float: none;
+}
+
+nav li a
+{
+	display: block;
+	color: white;
+	text-align: center;
+	/*padding: 14px 16px;*/
+	padding: 1em;
+	text-decoration: none;
+}
+
+nav li a:hover
+{
+	background-color: #24478F;
 }
